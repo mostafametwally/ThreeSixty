@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "9e1a39d0-a7de-4480-93fd-7d1e701a4773",
+		"name": "threeSixtyImagingTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Creat new Board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify Board Name\", function () {\r",
+							"    pm.expect(responseData.name).to.include(\"Board_1\");\r",
+							"});\r",
+							"pm.test(\"Veify Board Id\", function () {\r",
+							"    pm.expect(responseData.id).not.null;\r",
+							"});\r",
+							"pm.test(\"Veify Board url\", function () {\r",
+							"    pm.expect(responseData.url).not.null;\r",
+							"});\r",
+							"pm.test(\"Veify Board shortUrl\", function () {\r",
+							"    pm.expect(responseData.shortUrl).not.null;\r",
+							"});\r",
+							"\r",
+							"//var boardId = responseData.id\r",
+							"pm.collectionVariables.set(\"boardId\", responseData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/1/boards?token={{token}}&key={{key}}&name=Board_1",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"1",
+						"boards"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "name",
+							"value": "Board_1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creat new Board without Key",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//let responseData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/1/boards?token={{token}}&name=Proj_1_Board",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"1",
+						"boards"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "key",
+							"value": "{{key}}",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Proj_1_Board"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create inprgress list inside board_1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseData = pm.response.json();\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Verify List Name\", function () {\r",
+							"        pm.expect(responseData.name).to.equal(\"in progress\");\r",
+							"});\r",
+							"var listid= responseData.id\r",
+							"pm.collectionVariables.set(\"ListId\", listid)\r",
+							"console.log(listid)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/1/lists/?name=in progress&key={{key}}&token={{token}}&idBoard={{boardId}}",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"1",
+						"lists",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "in progress"
+						},
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "idBoard",
+							"value": "{{boardId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Card_1 board_1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseData = pm.response.json();\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Verify Card Name\", function () {\r",
+							"        pm.expect(responseData.name).to.equal(\"Card_1\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Veify Card Id\", function () {\r",
+							"    pm.expect(responseData.id).not.null;\r",
+							"});\r",
+							"pm.test(\"Veify Card url\", function () {\r",
+							"    pm.expect(responseData.url).not.null;\r",
+							"});\r",
+							"pm.test(\"Veify Card shortUrl\", function () {\r",
+							"    pm.expect(responseData.shortUrl).not.null;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/1/cards?key={{key}}&token={{token}}&idList={{ListId}}&name=Card_1",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "idList",
+							"value": "{{ListId}}"
+						},
+						{
+							"key": "name",
+							"value": "Card_1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Card_2 board_1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseData = pm.response.json();\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Verify Card Name\", function () {\r",
+							"        pm.expect(responseData.name).to.equal(\"Card_2\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Veify Card Id\", function () {\r",
+							"    pm.expect(responseData.id).not.null;\r",
+							"});\r",
+							"pm.test(\"Veify Card url\", function () {\r",
+							"    pm.expect(responseData.url).not.null;\r",
+							"});\r",
+							"pm.test(\"Veify Card shortUrl\", function () {\r",
+							"    pm.expect(responseData.shortUrl).not.null;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/1/cards?key={{key}}&token={{token}}&idList={{ListId}}&name=Card_2",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "idList",
+							"value": "{{ListId}}"
+						},
+						{
+							"key": "name",
+							"value": "Card_2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Card_3 board_1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseData = pm.response.json();\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Verify Card Name\", function () {\r",
+							"        pm.expect(responseData.name).to.equal(\"Card_3\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Veify Card Id\", function () {\r",
+							"    pm.expect(responseData.id).not.null;\r",
+							"});\r",
+							"pm.test(\"Veify Card url\", function () {\r",
+							"    pm.expect(responseData.url).not.null;\r",
+							"});\r",
+							"pm.test(\"Veify Card shortUrl\", function () {\r",
+							"    pm.expect(responseData.shortUrl).not.null;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/1/cards?key={{key}}&token={{token}}&idList={{ListId}}&name=Card_3",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "idList",
+							"value": "{{ListId}}"
+						},
+						{
+							"key": "name",
+							"value": "Card_3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "key",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "BaseUrl",
+			"value": ""
+		},
+		{
+			"key": "{{boardId}}",
+			"value": ""
+		},
+		{
+			"key": "boardId",
+			"value": ""
+		},
+		{
+			"key": "ListId",
+			"value": ""
+		}
+	]
+}
