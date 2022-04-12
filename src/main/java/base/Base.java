@@ -3,6 +3,8 @@ package base;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
@@ -14,6 +16,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,6 +26,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Base {
 	public static Properties prop;
 	public static WebDriver driver;
+	 //protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
 	public ExtentReports extent;
 	public ExtentTest extentTest;
 	public static JavascriptExecutor js;
@@ -44,20 +50,22 @@ public class Base {
 	// The WebDriver initialization function
 	// it can be extended for (Chrome, Firefox, Opera, IE)
 	
-	public static void initialization() {
+	public static void initialization() throws MalformedURLException {
 		String BrowserName = prop.getProperty("Browser");
 		if (BrowserName.equals("Chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), options);
+			//driver = new ChromeDriver();
 		} else
 			if (BrowserName.equals("Firefox")) {
-			WebDriverManager.firefoxdriver().setup();
+			//WebDriverManager.firefoxdriver().setup();
 			driver = new ChromeDriver();
 		}else if (BrowserName.equals("Opera")) {
-			WebDriverManager.operadriver().setup();
+			//WebDriverManager.operadriver().setup();
 			driver = new ChromeDriver();
 		}else if (BrowserName.equals("InternetExplorer")) {
-			WebDriverManager.iedriver().setup();
+			//WebDriverManager.iedriver().setup();
 			driver = new ChromeDriver();
 		}		
 		

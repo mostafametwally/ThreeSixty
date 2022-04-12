@@ -1,6 +1,7 @@
 package test;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
@@ -27,7 +28,7 @@ public class SignUpPageTest extends Base {
 		}
 	
 	@BeforeMethod
-	public void setupMethod() {
+	public void setupMethod() throws MalformedURLException {
 		Base.initialization();
 		signUpPage = new SignUpPage();
 		signUpPage.openSignUpPage("SignUpPageLink");
