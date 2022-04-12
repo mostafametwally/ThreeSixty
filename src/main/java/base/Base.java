@@ -63,7 +63,7 @@ public class Base {
 			
 			ChromeOptions options = new ChromeOptions();
 			options.merge(cap);
-			driver = new RemoteWebDriver(new URL("http://172.17.0.4:4444//wd/hub"), options);
+			driver = new RemoteWebDriver(new URL("http://172.17.0.3:4444/wd/hub"), options);
 			//WebDriverManager.chromedriver().setup();
 			//driver = new ChromeDriver();
 		} else
