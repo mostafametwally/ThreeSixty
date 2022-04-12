@@ -56,27 +56,27 @@ public class Base {
 	public static void initialization() throws MalformedURLException {
 		cap= new DesiredCapabilities();
 		String BrowserName = prop.getProperty("Browser");
-		if (BrowserName.equals("Chrome")) {
-			cap.setBrowserName("chrome");
-			cap.setPlatform(Platform.LINUX);
-			cap.setVersion("100.0");
-			
-			ChromeOptions options = new ChromeOptions();
-			options.merge(cap);
-			driver = new RemoteWebDriver(new URL("http://172.17.0.3:4444/wd/hub"), options);
-			//WebDriverManager.chromedriver().setup();
-			//driver = new ChromeDriver();
-		} else
-			if (BrowserName.equals("Firefox")) {
-			//WebDriverManager.firefoxdriver().setup();
-			driver = new ChromeDriver();
-		}else if (BrowserName.equals("Opera")) {
-			//WebDriverManager.operadriver().setup();
-			driver = new ChromeDriver();
-		}else if (BrowserName.equals("InternetExplorer")) {
-			//WebDriverManager.iedriver().setup();
-			driver = new ChromeDriver();
-		}		
+		cap.setBrowserName("chrome");
+		cap.setPlatform(Platform.LINUX);
+		cap.setVersion("100.0");
+		
+		ChromeOptions options = new ChromeOptions();
+		options.merge(cap);
+		driver = new RemoteWebDriver(new URL("http://172.17.0.3:4444/wd/hub"), options);
+//		if (BrowserName.equals("Chrome")) {
+//			//WebDriverManager.chromedriver().setup();
+//			//driver = new ChromeDriver();
+//		} else
+//			if (BrowserName.equals("Firefox")) {
+//			//WebDriverManager.firefoxdriver().setup();
+//			driver = new ChromeDriver();
+//		}else if (BrowserName.equals("Opera")) {
+//			//WebDriverManager.operadriver().setup();
+//			driver = new ChromeDriver();
+//		}else if (BrowserName.equals("InternetExplorer")) {
+//			//WebDriverManager.iedriver().setup();
+//			driver = new ChromeDriver();
+//		}		
 		
 		driver.manage().window().maximize();		
 		((JavascriptExecutor) driver).executeScript("document.body.style.zoom='90%';");
