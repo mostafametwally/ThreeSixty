@@ -55,14 +55,13 @@ public class Base {
 	
 	public static void initialization() throws MalformedURLException {
 		cap= new DesiredCapabilities();
-		String BrowserName = prop.getProperty("Browser");
-		cap.setBrowserName("chrome");
-		cap.setPlatform(Platform.LINUX);
-		cap.setVersion("100.0");
-		
 		ChromeOptions options = new ChromeOptions();
+		cap.setPlatform(Platform.LINUX);
+		cap.setBrowserName("chrome");
+		cap.setVersion("100.0");	
 		options.merge(cap);
 		driver = new RemoteWebDriver(new URL("http://172.17.0.4:4444/wd/hub"), options);
+//		String BrowserName = prop.getProperty("Browser");		
 //		if (BrowserName.equals("Chrome")) {
 //			//WebDriverManager.chromedriver().setup();
 //			//driver = new ChromeDriver();
@@ -78,9 +77,9 @@ public class Base {
 //			driver = new ChromeDriver();
 //		}		
 		
-		driver.manage().window().maximize();		
-		((JavascriptExecutor) driver).executeScript("document.body.style.zoom='90%';");
-		driver.manage().deleteAllCookies();
+		//driver.manage().window().maximize();		
+		//((JavascriptExecutor) driver).executeScript("document.body.style.zoom='90%';");
+		//driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
