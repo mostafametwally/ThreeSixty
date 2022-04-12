@@ -15,7 +15,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.opera.OperaDriver;
 
 
 import com.relevantcodes.extentreports.ExtentReports;
@@ -56,13 +55,13 @@ public class Base {
 		} else
 			if (BrowserName.equals("Firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			driver = new ChromeDriver();
 		}else if (BrowserName.equals("Opera")) {
 			WebDriverManager.operadriver().setup();
-			driver = new OperaDriver();
+			driver = new ChromeDriver();
 		}else if (BrowserName.equals("InternetExplorer")) {
 			WebDriverManager.iedriver().setup();
-			driver = new FirefoxDriver();
+			driver = new ChromeDriver();
 		}		
 		
 		driver.manage().window().maximize();		

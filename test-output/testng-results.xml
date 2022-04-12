@@ -2,35 +2,35 @@
 <testng-results skipped="0" failed="0" ignored="5" total="6" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14284" started-at="2022-04-12T11:44:56 EET" finished-at="2022-04-12T11:45:10 EET">
+  <suite name="Default suite" duration-ms="9018" started-at="2022-04-12T12:41:57 EET" finished-at="2022-04-12T12:42:06 EET">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14284" started-at="2022-04-12T11:44:56 EET" finished-at="2022-04-12T11:45:10 EET">
+    <test name="Default test" duration-ms="9018" started-at="2022-04-12T12:41:57 EET" finished-at="2022-04-12T12:42:06 EET">
       <class name="test.SignUpPageTest">
-        <test-method status="PASS" signature="setupTest()[pri:0, instance:test.SignUpPageTest@3d8314f0]" name="setupTest" is-config="true" duration-ms="371" started-at="2022-04-12T11:44:56 EET" finished-at="2022-04-12T11:44:56 EET">
+        <test-method status="PASS" signature="setupTest()[pri:0, instance:test.SignUpPageTest@3d8314f0]" name="setupTest" is-config="true" duration-ms="478" started-at="2022-04-12T12:41:57 EET" finished-at="2022-04-12T12:41:57 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method status="PASS" signature="setupMethod()[pri:0, instance:test.SignUpPageTest@3d8314f0]" name="setupMethod" is-config="true" duration-ms="11945" started-at="2022-04-12T11:44:56 EET" finished-at="2022-04-12T11:45:08 EET">
+        <test-method status="PASS" signature="setupMethod()[pri:0, instance:test.SignUpPageTest@3d8314f0]" name="setupMethod" is-config="true" duration-ms="6717" started-at="2022-04-12T12:41:57 EET" finished-at="2022-04-12T12:42:04 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupMethod -->
-        <test-method status="PASS" signature="VerifyEmailErrorMsg()[pri:0, instance:test.SignUpPageTest@3d8314f0]" name="VerifyEmailErrorMsg" duration-ms="388" started-at="2022-04-12T11:45:08 EET" finished-at="2022-04-12T11:45:08 EET">
+        <test-method status="PASS" signature="VerifyPassWrdErrorMsg()[pri:0, instance:test.SignUpPageTest@3d8314f0]" name="VerifyPassWrdErrorMsg" duration-ms="407" started-at="2022-04-12T12:42:04 EET" finished-at="2022-04-12T12:42:05 EET">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyEmailErrorMsg -->
-        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:test.SignUpPageTest@3d8314f0]" name="tearDownMethod" is-config="true" duration-ms="1146" started-at="2022-04-12T11:45:08 EET" finished-at="2022-04-12T11:45:09 EET">
+        </test-method> <!-- VerifyPassWrdErrorMsg -->
+        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:test.SignUpPageTest@3d8314f0]" name="tearDownMethod" is-config="true" duration-ms="937" started-at="2022-04-12T12:42:05 EET" finished-at="2022-04-12T12:42:05 EET">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyEmailErrorMsg status=SUCCESS method=SignUpPageTest.VerifyEmailErrorMsg()[pri:0, instance:test.SignUpPageTest@3d8314f0] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyPassWrdErrorMsg status=SUCCESS method=SignUpPageTest.VerifyPassWrdErrorMsg()[pri:0, instance:test.SignUpPageTest@3d8314f0] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownMethod -->
-        <test-method status="PASS" signature="tearDownTest()[pri:0, instance:test.SignUpPageTest@3d8314f0]" name="tearDownTest" is-config="true" duration-ms="385" started-at="2022-04-12T11:45:09 EET" finished-at="2022-04-12T11:45:10 EET">
+        <test-method status="PASS" signature="tearDownTest()[pri:0, instance:test.SignUpPageTest@3d8314f0]" name="tearDownTest" is-config="true" duration-ms="405" started-at="2022-04-12T12:42:05 EET" finished-at="2022-04-12T12:42:06 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownTest -->

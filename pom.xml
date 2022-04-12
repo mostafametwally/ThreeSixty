@@ -4,13 +4,6 @@
   <artifactId>vois.com</artifactId>
   <version>0.0.1-SNAPSHOT</version>
    <dependencies>
-		<!-- selenium depencency -->
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-support</artifactId>
-			<version>3.141.59</version>
-		</dependency>
 
 		<!-- TestNG depencency -->
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -30,14 +23,21 @@
 			<version>3.9</version>
 		</dependency>
 
-
-		<!-- Extentreports depencency -->
-		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+		<!-- selenium depencency -->
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
 		<dependency>
-			<groupId>com.relevantcodes</groupId>
-			<artifactId>extentreports</artifactId>
-			<version>2.41.2</version>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-support</artifactId>
+			<version>3.8.1</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-chrome-driver</artifactId>
+		    <version>3.8.1</version>
+		</dependency>
+		
 
 		<!-- Webdrivermanager depencency -->
 		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
