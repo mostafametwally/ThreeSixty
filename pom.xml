@@ -5,6 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
    <dependencies>
 
+
 		<!-- TestNG depencency -->
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
@@ -23,14 +24,7 @@
 			<version>3.9</version>
 		</dependency>
 
-		<!-- selenium depencency -->
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-support</artifactId>
-			<version>3.8.1</version>
-		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
 		<dependency>
 		    <groupId>org.seleniumhq.selenium</groupId>
@@ -38,7 +32,13 @@
 		    <version>3.8.1</version>
 		</dependency>
 		
-
+		<!-- selenium depencency -->
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-support</artifactId>
+			<version>3.8.1</version>
+		</dependency>
 		<!-- Webdrivermanager depencency -->
 		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 		<dependency>
