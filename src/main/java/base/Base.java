@@ -60,7 +60,7 @@ public class Base {
 		cap.setBrowserName("chrome");
 		cap.setVersion("100.0");	
 		options.merge(cap);
-		driver = new RemoteWebDriver(new URL("http://172.17.0.4:4444/wd/hub"), options);
+		driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), options);
 //		String BrowserName = prop.getProperty("Browser");		
 //		if (BrowserName.equals("Chrome")) {
 //			//WebDriverManager.chromedriver().setup();
