@@ -55,7 +55,7 @@ public class Base {
 		if (BrowserName.equals("Chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
-			driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), options);
+			driver = new RemoteWebDriver(new URL("http://172.17.0.5:4445/wd/hub"), options);
 			//driver = new ChromeDriver();
 		} else
 			if (BrowserName.equals("Firefox")) {
