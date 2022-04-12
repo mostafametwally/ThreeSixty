@@ -11,12 +11,15 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.relevantcodes.extentreports.ExtentReports;
@@ -26,7 +29,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Base {
 	public static Properties prop;
 	public static WebDriver driver;
-	 //protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
+	static DesiredCapabilities cap;
 	public ExtentReports extent;
 	public ExtentTest extentTest;
 	public static JavascriptExecutor js;
@@ -51,11 +54,17 @@ public class Base {
 	// it can be extended for (Chrome, Firefox, Opera, IE)
 	
 	public static void initialization() throws MalformedURLException {
+		cap= new DesiredCapabilities();
 		String BrowserName = prop.getProperty("Browser");
 		if (BrowserName.equals("Chrome")) {
-			WebDriverManager.chromedriver().setup();
+			cap.setBrowserName("chrome");
+			cap.setPlatform(Platform.LINUX);
+			cap.setVersion("100.0");
+			
 			ChromeOptions options = new ChromeOptions();
+			options.merge(cap);
 			driver = new RemoteWebDriver(new URL("http://172.17.0.5:4445/wd/hub"), options);
+			//WebDriverManager.chromedriver().setup();
 			//driver = new ChromeDriver();
 		} else
 			if (BrowserName.equals("Firefox")) {
