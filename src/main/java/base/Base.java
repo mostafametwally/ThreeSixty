@@ -54,12 +54,13 @@ public class Base {
 	// it can be extended for (Chrome, Firefox, Opera, IE)
 	
 	public static void initialization() throws MalformedURLException {
-		cap= new DesiredCapabilities();
+		
 		ChromeOptions options = new ChromeOptions();
-		cap.setPlatform(Platform.LINUX);
-		cap.setBrowserName("chrome");
-		cap.setVersion("100.0");	
-		options.merge(cap);
+//		cap= new DesiredCapabilities();
+//		cap.setPlatform(Platform.LINUX);
+//		cap.setBrowserName("chrome");
+//		cap.setVersion("100.0");	
+//		options.merge(cap);
 		driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), options);
 //		String BrowserName = prop.getProperty("Browser");		
 //		if (BrowserName.equals("Chrome")) {
