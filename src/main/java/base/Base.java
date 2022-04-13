@@ -78,9 +78,9 @@ public class Base {
 //			driver = new ChromeDriver();
 //		}		
 		
-		//driver.manage().window().maximize();		
-		//((JavascriptExecutor) driver).executeScript("document.body.style.zoom='90%';");
-		//driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();		
+		((JavascriptExecutor) driver).executeScript("document.body.style.zoom='90%';");
+		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
