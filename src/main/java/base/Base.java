@@ -56,12 +56,12 @@ public class Base {
 	public static void initialization() throws MalformedURLException {
 		
 		ChromeOptions options = new ChromeOptions();
-//		cap= new DesiredCapabilities();
-//		cap.setPlatform(Platform.LINUX);
-//		cap.setBrowserName("chrome");
-//		cap.setVersion("100.0");	
-//		options.merge(cap);
-		driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), options);
+		cap= new DesiredCapabilities();
+		cap.setPlatform(Platform.LINUX);
+		cap.setBrowserName("chrome");
+		cap.setVersion("100.0");	
+		options.merge(cap);
+		driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
 //		String BrowserName = prop.getProperty("Browser");		
 //		if (BrowserName.equals("Chrome")) {
 //			//WebDriverManager.chromedriver().setup();
